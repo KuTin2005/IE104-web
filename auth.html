@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đăng nhập / Đăng ký</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .auth-wrap{max-width:720px;margin:24px auto}
+    .tabs{display:flex;gap:8px;margin-bottom:12px}
+    .tabs a{padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-family:var(--ui-font)}
+    .tabs a.active{background:var(--primary);border-color:var(--primary);color:#fff;font-weight:800}
+    form.auth{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px}
+    .auth label{font-weight:700}
+    .auth input{padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+    .auth .row{display:grid;gap:8px}
+    .auth button{padding:10px 14px;border-radius:10px;border:0;background:#000;color:#fff;font-weight:800;cursor:pointer;font-family:var(--ui-font)}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="topbar container">
+      <a class="logo" href="index.html">
+        <span class="logo-strong">ĐỨC TIẾN GAMINGZONE</span>
+        <span class="logo-sub">GAME BẢN QUYỀN GIÁ RẺ</span>
+      </a>
+
+      <form class="search" role="search">
+        <input type="search" placeholder="Nhập game bạn muốn tìm...">
+        <button class="search-btn" aria-label="Tìm kiếm">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M16.65 10.825a5.825 5.825 0 11-11.65 0 5.825 5.825 0 0111.65 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+
+      <div class="actions">
+        <button class="icon-btn" data-role="account" aria-label="Tài khoản">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 12a5 5 0 100-10 5 5 0 000 10zM4 20a8 8 0 1116 0v1H4v-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="icon-btn" data-role="cart" aria-label="Giỏ hàng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12zM6 6l-1-3H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/>
+          </svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn" data-role="wishlist" aria-label="Yêu thích">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="list.html?scope=online">Game Online</a></li>
+          <li><a href="list.html?scope=offline">Game Offline</a></li>
+          <li class="has-dropdown">
+            <a href="#" aria-expanded="false">Thể Loại
+              <svg class="chev" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="list.html?category=hanh-dong">Hành động</a></li>
+              <li><a href="list.html?category=nhap-vai">Nhập vai</a></li>
+              <li><a href="list.html?category=ban-sung">Bắn súng</a></li>
+              <li><a href="list.html?category=mo-phong">Mô phỏng</a></li>
+              <li><a href="list.html?category=the-thao">Thể thao</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="guide.html">Hướng Dẫn</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container auth-wrap">
+    <h2 class="section-title">Tài Khoản</h2>
+    <div class="tabs">
+      <a href="?tab=login" id="tabLogin">Đăng nhập</a>
+      <a href="?tab=register" id="tabRegister">Đăng ký</a>
+    </div>
+
+    <!-- Login -->
+    <form class="auth" id="formLogin" style="display:none">
+      <div class="row">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+      </div>
+      <div class="row">
+        <label>Mật khẩu</label>
+        <input type="password" id="loginPass" placeholder="••••••••" required>
+      </div>
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <!-- Register -->
+    <form class="auth" id="formRegister" style="display:none">
+      <div class="row">
+        <label>Họ tên</label>
+        <input type="text" id="regName" placeholder="Lương Đức Tiến" required>
+      </div>
+      <div class="row">
+        <label>Email</label>
+        <input type="email" id="regEmail" placeholder="23521573@gm.uit.edu.vn" required>
+      </div>
+      <div class="row">
+        <label>Số điện thoại</label>
+        <input type="tel" id="regPhone" placeholder="0366443347" required>
+      </div>
+      <div class="row">
+        <label>Mật khẩu</label>
+        <input type="password" id="regPass" placeholder="••••••••" required>
+      </div>
+      <button type="submit">Đăng ký</button>
+    </form>
+  </main>
+
+  <script>
+    // Demo front-end only: lưu account vào localStorage
+    const tab = new URLSearchParams(location.search).get('tab') || 'login';
+    const tabLogin = document.getElementById('tabLogin');
+    const tabRegister = document.getElementById('tabRegister');
+    const formLogin = document.getElementById('formLogin');
+    const formRegister = document.getElementById('formRegister');
+
+    function show(t){
+      tabLogin.classList.toggle('active', t==='login');
+      tabRegister.classList.toggle('active', t!=='login');
+      formLogin.style.display = t==='login' ? 'grid' : 'none';
+      formRegister.style.display = t==='login' ? 'none' : 'grid';
+    }
+    show(tab);
+
+    formRegister.addEventListener('submit', e=>{
+      e.preventDefault();
+      const acc = {
+        name:  document.getElementById('regName').value.trim(),
+        email: document.getElementById('regEmail').value.trim(),
+        phone: document.getElementById('regPhone').value.trim(),
+        pass:  document.getElementById('regPass').value
+      };
+      localStorage.setItem('account', JSON.stringify(acc));
+      alert('Đăng ký thành công!');
+      location.href = 'index.html';
+    });
+
+    formLogin.addEventListener('submit', e=>{
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const pass  = document.getElementById('loginPass').value;
+      const acc = JSON.parse(localStorage.getItem('account') || 'null');
+      if (acc && acc.email === email && acc.pass === pass){
+        alert('Đăng nhập thành công!');
+        location.href = 'index.html';
+      } else {
+        alert('Sai email hoặc mật khẩu, vui lòng thử lại.');
+      }
+    });
+  </script>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

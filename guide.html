@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hướng dẫn sử dụng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="topbar container">
+      <a class="logo" href="index.html">
+        <span class="logo-strong">ĐỨC TIẾN GAMINGZONE</span>
+        <span class="logo-sub">GAME BẢN QUYỀN GIÁ RẺ</span>
+      </a>
+      <form class="search" role="search">
+        <input type="search" placeholder="Nhập game bạn muốn tìm...">
+        <button class="search-btn" aria-label="Tìm kiếm">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M16.65 10.825a5.825 5.825 0 11-11.65 0 5.825 5.825 0 0111.65 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+      <div class="actions">
+        <button class="icon-btn" data-role="account" aria-label="Tài khoản">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 12a5 5 0 100-10 5 5 0 000 10zM4 20a8 8 0 1116 0v1H4v-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="icon-btn" data-role="cart" aria-label="Giỏ hàng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9H7L6 6zM6 6L5 3H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/>
+          </svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn" data-role="wishlist" aria-label="Yêu thích">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="list.html?scope=online">Game Online</a></li>
+          <li><a href="list.html?scope=offline">Game Offline</a></li>
+          <li class="has-dropdown">
+            <a href="#" aria-expanded="false">Thể Loại
+              <svg class="chev" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="list.html?category=hanh-dong">Hành động</a></li>
+              <li><a href="list.html?category=nhap-vai">Nhập vai</a></li>
+              <li><a href="list.html?category=ban-sung">Bắn súng</a></li>
+              <li><a href="list.html?category=mo-phong">Mô phỏng</a></li>
+              <li><a href="list.html?category=the-thao">Thể thao</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li class="active"><a href="guide.html">Hướng Dẫn</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Hướng Dẫn Sử Dụng</h2>
+
+    <section class="features" style="grid-template-columns:1fr;gap:18px">
+      <div class="feature" style="align-items:flex-start">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10h16" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <div class="feature-title">1) Tìm & duyệt game</div>
+          <div class="feature-desc" style="margin-top:8px">
+            - Gõ tên game vào ô tìm kiếm để tới trang kết quả.<br/>
+            - Dùng menu <b>Game Online/Offline</b> hoặc <b>Thể Loại</b> để lọc nhanh.
+          </div>
+        </div>
+      </div>
+
+      <div class="feature" style="align-items:flex-start">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <div class="feature-title">2) Sắp xếp & phân trang</div>
+          <div class="feature-desc" style="margin-top:8px">
+            - Ở trang danh sách, chọn <i>Mới phát hành/Giá tăng dần/Giá giảm dần/Tên</i>.<br/>
+            - “Hiển thị” 12 game/trang, có phân trang bên dưới.
+          </div>
+        </div>
+      </div>
+
+      <div class="feature" style="align-items:flex-start">
+        <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9H7L6 6zM6 6L5 3H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="feature-title">3) Thêm vào giỏ & tài khoản</div>
+          <div class="feature-desc" style="margin-top:8px">
+            - Đưa chuột vào thẻ game để hiện nút <b>Thêm vào giỏ hàng</b>.<br/>
+            - Di chuột vào icon <b>Tài khoản</b> để xem thông tin, hoặc <i>Đăng nhập/Đăng ký</i>.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>
